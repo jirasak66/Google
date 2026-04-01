@@ -43,7 +43,7 @@ A brief description of what this project does and why it's interesting.
 - 💼 LinkedIn: [Your LinkedIn URL]
 - 🐦 Twitter: [@YourHandle]
 - 📧 Email: your.email@example.com
-- 🌐 Portfolio: [Index.html]
+- 🌐 Portfolio: [[Index.html](https://github.com/jirasak66/Google/blob/main/Index.html)]
 
 ## 📝 Latest Blog Posts
 
