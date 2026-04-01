@@ -43,7 +43,7 @@ A brief description of what this project does and why it's interesting.
 - 💼 LinkedIn: [Your LinkedIn URL]
 - 🐦 Twitter: [@YourHandle]
 - 📧 Email: your.email@example.com
-- 🌐 Portfolio: [Your Website]
+- 🌐 Portfolio: [Index.html]
 
 ## 📝 Latest Blog Posts
 
