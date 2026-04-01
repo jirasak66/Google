@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Modern Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Prompt', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+  color: white;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #00eaff;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00c2cc;
+}
+
+.list {
+  margin-top: 15px;
+}
+
+.item {
+  background: rgba(255,255,255,0.15);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>🌐 เว็บไซต์ของฉัน</header>
+
+<div class="container">
+
+  <!-- ABOUT -->
+  <div class="card">
+    <h2>เกี่ยวกับ</h2>
+    <p>นี่คือเว็บไซต์ที่สามารถใช้งานจริง มีระบบฟอร์มและบันทึกข้อมูลได้</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="card">
+    <h2>📩 ติดต่อเรา</h2>
+    <input type="text" id="name" placeholder="ชื่อของคุณ">
+    <textarea id="message" placeholder="ข้อความ"></textarea>
+    <button onclick="saveData()">ส่งข้อความ</button>
+  </div>
+
+  <!-- DATA LIST -->
+  <div class="card">
+    <h2>📋 ข้อความที่ส่ง</h2>
+    <div id="dataList" class="list"></div>
+  </div>
+
+</div>
+
+<script>
+function saveData() {
+  let name = document.getElementById("name").value;
+  let message = document.getElementById("message").value;
+
+  if (!name || !message) {
+    alert("กรุณากรอกข้อมูลให้ครบ");
+    return;
+  }
+
+  let data = JSON.parse(localStorage.getItem("messages")) || [];
+
+  data.push({ name, message });
+
+  localStorage.setItem("messages", JSON.stringify(data));
+
+  document.getElementById("name").value = "";
+  document.getElementById("message").value = "";
+
+  showData();
+}
+
+function showData() {
+  let data = JSON.parse(localStorage.getItem("messages")) || [];
+  let html = "";
+
+  data.forEach(item => {
+    html += `<div class="item"><b>${item.name}</b><br>${item.message}</div>`;
+  });
+
+  document.getElementById("dataList").innerHTML = html;
+}
+
+showData();
+</script>
+
+</body>
+</html>
