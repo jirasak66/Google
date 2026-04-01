@@ -1,4 +1,4 @@
-# Hi, I'm [Your Name] 👋
+# Hi, I'm [I'm nick] 👋
 
 Welcome to my GitHub profile! I'm passionate about software development and open-source contributions.
 
